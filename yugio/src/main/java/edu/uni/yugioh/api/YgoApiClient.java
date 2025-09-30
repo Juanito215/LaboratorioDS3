@@ -13,7 +13,7 @@ public class YgoApiClient {
     private static final String RANDOM_CARD_URL = "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=1&offset=0&sort=random&cachebust";
     private final HttpClient client = HttpClient.newHttpClient();
 
-    public Card fetchRandomMonsterCard() throws IOException, InterruptedException {
+    public Card getRandomMonsterCard() throws IOException, InterruptedException {
         StringBuilder debugInfo = new StringBuilder();
 
         for (int attempts = 0; attempts < 5; attempts++) {
@@ -40,14 +40,6 @@ public class YgoApiClient {
                 cardJson = json;
             }
 
-            // Guardar información para debug
-            debugInfo.append("Intento ").append(attempts + 1).append(":\n")
-                    .append(" type = ").append(cardJson.optString("type", "N/A")).append("\n")
-                    .append(" name = ").append(cardJson.optString("name", "N/A")).append("\n")
-                    .append(" atk = ").append(cardJson.opt("atk")).append("\n")
-                    .append(" def = ").append(cardJson.opt("def")).append("\n")
-                    .append(" raw = ").append(resp.body()).append("\n\n");
-
             String type = cardJson.optString("type", "");
             if (!type.toLowerCase().contains("monster")) continue;
 
@@ -67,7 +59,7 @@ public class YgoApiClient {
             return new Card(name, atk, def, imageUrl);
         }
 
-        // Si no encontramos ninguna Monster, lanzamos la excepción con todo el debug incluido
-        throw new IOException("No se obtuvo carta Monster tras varios intentos.\nDEBUG:\n" + debugInfo.toString());
+        // Si no encontramos ninguna Monster, lanzamos la excepción
+        throw new IOException("No se obtuvo carta Monster tras varios intentos.");
     }
 }

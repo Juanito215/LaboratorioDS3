@@ -1,4 +1,4 @@
-package edu.uni.ygoduellite;
+package edu.uni.yugioh.ui.DuelFrame.java;
 
 import edu.uni.ygoduellite.ui.DuelFrame;
 import javax.swing.*;
