@@ -1,7 +1,8 @@
-package edu.uni.yugioh.ui.DuelFrame.java;
+package edu.uni.yugiooh;
 
-import edu.uni.ygoduellite.ui.DuelFrame;
-import javax.swing.*;
+import javax.swing.SwingUtilities;
+
+import edu.uni.yugiooh.ui.DuelFrame;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,8 +1,9 @@
-package edu.uni.ygoduellite.logic;
+package edu.uni.yugiooh.logic;
 
-import edu.uni.ygoduellite.listener.BattleListener;
-import edu.uni.ygoduellite.model.Card;
 import java.util.Random;
+
+import edu.uni.yugiooh.listener.BattleListener;
+import edu.uni.yugiooh.model.Card;
 
 public class Duel {
     public enum Position { ATTACK, DEFENSE }

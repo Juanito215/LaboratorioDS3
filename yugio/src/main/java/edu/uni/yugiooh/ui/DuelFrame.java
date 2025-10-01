@@ -1,19 +1,36 @@
-package edu.uni.ygoduellite.ui;
+package edu.uni.yugiooh.ui;
 
-import edu.uni.ygoduellite.api.YgoApiClient;
-import edu.uni.ygoduellite.listener.BattleListener;
-import edu.uni.ygoduellite.logic.Duel;
-import edu.uni.ygoduellite.model.Card;
-
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+
+import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+import javax.swing.SwingWorker;
+
+import edu.uni.yugiooh.api.YgoApiClient;
+import edu.uni.yugiooh.listener.BattleListener;
+import edu.uni.yugiooh.logic.Duel;
+import edu.uni.yugiooh.model.Card;
 
 public class DuelFrame extends JFrame implements BattleListener {
     private final JButton btnLoad = new JButton("Cargar Cartas");

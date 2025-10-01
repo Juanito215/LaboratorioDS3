@@ -1,4 +1,4 @@
-package edu.uni.ygoduellite.model;
+package edu.uni.yugiooh.model;
 
 public class Card {
     private final String name;

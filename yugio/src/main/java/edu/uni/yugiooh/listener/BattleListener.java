@@ -1,4 +1,4 @@
-package edu.uni.ygoduellite.listener;
+package edu.uni.yugiooh.listener;
 
 public interface BattleListener {
     void onTurn(String playerCard, String aiCard, String winner);

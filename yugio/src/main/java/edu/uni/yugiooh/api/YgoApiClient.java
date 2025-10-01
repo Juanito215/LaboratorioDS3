@@ -1,13 +1,15 @@
-package edu.uni.ygoduellite.api;
+package edu.uni.yugiooh.api;
 
-import edu.uni.ygoduellite.model.Card;
-import org.json.JSONObject;
-import org.json.JSONArray;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import edu.uni.yugiooh.model.Card;
 
 public class YgoApiClient {
     private static final String RANDOM_CARD_URL = "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=1&offset=0&sort=random&cachebust";
