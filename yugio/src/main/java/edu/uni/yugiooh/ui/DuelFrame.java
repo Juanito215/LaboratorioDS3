@@ -105,7 +105,7 @@ public class DuelFrame extends JFrame implements BattleListener {
 
     private void onLoadClicked(ActionEvent e) {
         btnLoad.setEnabled(false);
-        log("🔄 Cargando cartas...");
+        log("Cargando cartas...");
         SwingWorker<Void, Void> worker = new SwingWorker<>() {
             @Override
             protected Void doInBackground() throws Exception {
@@ -121,10 +121,10 @@ public class DuelFrame extends JFrame implements BattleListener {
                 try {
                     get();
                     renderCards();
-                    log("✅ Cartas cargadas correctamente.");
+                    log("Cartas cargadas correctamente.");
                     btnStart.setEnabled(true);
                 } catch (InterruptedException | ExecutionException ex) {
-                    log("❌ Error cargando cartas: " + ex.getCause().getMessage());
+                    log("Error cargando cartas: " + ex.getCause().getMessage());
                 } finally {
                     btnLoad.setEnabled(true);
                 }
@@ -204,16 +204,16 @@ public class DuelFrame extends JFrame implements BattleListener {
 
     private void onStartClicked() {
         if (playerCards.size() < 3 || aiCards.size() < 3) {
-            log("⚠️ Ambos jugadores deben tener 3 cartas antes de iniciar.");
+            log("Ambos jugadores deben tener 3 cartas antes de iniciar.");
             return;
         }
         duel = new Duel(this); duel.reset();
-        log("🔥 Duelo iniciado. Selecciona una carta y elige Atacar o Defender.");
+        log("Duelo iniciado. Selecciona una carta y elige Atacar o Defender.");
         btnStart.setEnabled(false);
     }
 
     private void onPlayerPlays(int playerIndex, Duel.Position pos) {
-        if (duel == null) { log("ℹ️ Inicia el duelo primero."); return; }
+        if (duel == null) { log("Inicia el duelo primero."); return; }
         if (playerIndex < 0 || playerIndex >= playerCards.size()) return;
 
         Card playerCard = playerCards.remove(playerIndex);
@@ -240,5 +240,5 @@ public class DuelFrame extends JFrame implements BattleListener {
         JOptionPane.showMessageDialog(this, "Ganador: " + winner, "Resultado", JOptionPane.INFORMATION_MESSAGE);
         duel = null; btnStart.setEnabled(true);
     }
-    @Override public void onError(String message) { log("❌ Error: " + message); }
+    @Override public void onError(String message) { log("Error: " + message); }
 }
